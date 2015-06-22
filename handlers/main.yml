@@ -1,0 +1,7 @@
+- name: Restart laclasse-cahiertextes
+  service: name=laclasse-cahiertextes state=restarted
+  notify: Check laclasse-cahiertextes
+
+- name: Check laclasse-cahiertextes
+  wait_for: port={{laclasse_cahiertextes_port}} delay=5 timeout=10
+

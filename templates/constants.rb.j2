@@ -1,0 +1,8 @@
+{% import 'macros/path.j2' as path with context %}
+
+# Pronote key for {{laclasse_cahiertextes_deploy_user}}
+
+PRONOTE = {
+  nom_integrateur: '{{ laclasse_pronote_integrateur }}',
+  cle_integrateur: '{{ path.dedup_slashes(path.expand_path("/home/", laclasse_cahiertextes_deploy_user, "/.ssh/pronote")) }}'
+}

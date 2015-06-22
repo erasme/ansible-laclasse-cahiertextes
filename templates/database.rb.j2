@@ -1,0 +1,20 @@
+#
+# Configuration de la base de données de Backend
+#
+# {{ ansible_managed }}
+#
+require 'logger'
+require 'sequel'
+
+DB = Sequel.mysql2(
+  '{{ laclasse_cahiertextes_database.name }}',
+  host: '{{ laclasse_cahiertextes_database.host }}',
+  user: '{{ laclasse_cahiertextes_database.user }}',
+  password: '{{ laclasse_cahiertextes_database.password }}',
+  charset: 'utf8')
+
+Sequel.extension(:pagination)
+Sequel.extension(:migration)
+
+# Uncomment this if you want to log all DB queries
+# DB.loggers << Logger.new($stdout)

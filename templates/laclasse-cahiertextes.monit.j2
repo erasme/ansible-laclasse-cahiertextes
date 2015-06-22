@@ -1,0 +1,3 @@
+check process thin-laclasse-cahiertextes with pidfile {{ laclasse_pid_dir }}/laclasse-cahiertextes/thin.{{ laclasse_services_cahiertextes_port }}.pid
+   group laclasse
+   if failed port {{ laclasse_services_cahiertextes_port }} protocol http request "/docs/elFinder/css/common.css" then alert

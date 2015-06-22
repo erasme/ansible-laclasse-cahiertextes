@@ -1,0 +1,28 @@
+- include: check_vars.yml tags=laclasse,laclasse:cahiertextes,check_vars
+
+- name: Send notification message via Slack
+  local_action:
+    module: slack
+    domain: "{{ laclasse_slack.host }}"
+    token: "{{ laclasse_slack.token }}"
+    msg: "3...2...1... cahiertextes v{{ laclasse_cahiertextes_version }} @ {{ inventory_hostname }} :rocket: "
+    channel: "{{ laclasse_slack.channel }}" 
+  ignore_errors: true
+
+  tags:
+    - laclasse
+    - laclasse:cahiertextes
+
+- include: cahiertextes.yml tags=laclasse,laclasse:cahiertextes
+
+- name: Send notification message via Slack
+  local_action:
+    module: slack
+    domain: "{{ laclasse_slack.host }}"
+    token: "{{ laclasse_slack.token }}"
+    msg: "cahiertextes (version {{ git_tag.stdout }}) successfully deployed on {{ inventory_hostname }} :thumbsup:"
+    channel: "{{ laclasse_slack.channel }}"
+  ignore_errors: true
+  tags:
+    - laclasse
+    - laclasse:cahiertextes

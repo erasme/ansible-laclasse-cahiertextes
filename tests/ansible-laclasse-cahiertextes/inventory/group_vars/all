@@ -1,0 +1,13 @@
+# Change db credentials below
+laclasse_cahiertextes_database:
+  name: cahiertextes
+  user: cdt
+  host: 'localhost'
+  password: "foobar"
+
+laclasse_cahiertextes_deploy_user: "{{ci_user}}"
+
+
+laclasse_redis_server: localhost
+laclasse_redis_port: 6379
+laclasse_redis_root: org:example:test
