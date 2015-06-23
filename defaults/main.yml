@@ -10,7 +10,7 @@ laclasse_puma_auth_token: somerandomtoken
 logstash_server: localhost
 logstash_udp_json_port: 1234
 
-## Slcak server
+## Slack server
 laclasse_slack:
   host: localhost
   channel: none
@@ -61,12 +61,12 @@ laclasse_services:
     description: 'Cahier textes'
     path: '/ct'
   docs:
-    path: '/docs'
     api_key: ''
     api_mode: ''
     app_id: 'DOCS'
-    title: 'Documents'
     description: "Documents"
+    path: '/docs'
+    title: 'Documents'
 
 # CT parameters
 laclasse_cahiertextes_description: 'Cahier de textes'

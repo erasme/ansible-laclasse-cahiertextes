@@ -3,3 +3,4 @@
   when: not {{ item }}
   with_items:
     - laclasse_cahiertextes_database
+    - laclasse_redis_root

@@ -6,7 +6,7 @@ laclasse_cahiertextes_database:
   password: "foobar"
 
 laclasse_cahiertextes_deploy_user: "{{ci_user}}"
-
+laclasse_cahiertextes_version: master
 
 laclasse_redis_server: localhost
 laclasse_redis_port: 6379
