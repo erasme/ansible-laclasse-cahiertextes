@@ -4,3 +4,4 @@
   with_items:
     - laclasse_cahiertextes_database
     - laclasse_redis_root
+    - laclasse_redis_server

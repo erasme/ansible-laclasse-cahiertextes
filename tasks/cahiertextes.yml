@@ -14,7 +14,7 @@
 - debug: msg="database_delegate_hostname {{database_delegate_hostname}}"
 
 - name: Creates deploy user
-  user: name={{ laclasse_cahiertextes_deploy_user }} comment="Service cahiertextes user"
+  user: name={{ laclasse_cahiertextes_deploy_user }} comment="laclasse user"
   notify: Restart laclasse-cahiertextes
 
 - name: Creates ssh directory for user
@@ -211,7 +211,7 @@
   shell: iptables-save
   register: needs_iptables
   changed_when: needs_iptables.stdout.find("laclasse-cahiertextes") == -1
-  when: laclasse_environment == 'production'
+  when: laclasse_environment == 'production' and firewall is defined
 
 - name: Open firewall
   shell: iptables -A TCP_IN -p tcp -m tcp --dport {{ laclasse_cahiertextes_port}} -j ACCEPT -m comment --comment laclasse-cahiertextes

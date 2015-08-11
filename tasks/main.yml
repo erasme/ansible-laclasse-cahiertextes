@@ -8,7 +8,6 @@
     msg: "3...2...1... cahiertextes v{{ laclasse_cahiertextes_version }} @ {{ inventory_hostname }} :rocket: "
     channel: "{{ laclasse_slack.channel }}" 
   ignore_errors: true
-
   tags:
     - laclasse
     - laclasse:cahiertextes

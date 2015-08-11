@@ -1,3 +1,4 @@
+# -*- mode: yaml; -*-
 # Change db credentials below
 laclasse_cahiertextes_database:
   name: cahiertextes
@@ -9,5 +10,4 @@ laclasse_cahiertextes_deploy_user: "{{ci_user}}"
 laclasse_cahiertextes_version: master
 
 laclasse_redis_server: localhost
-laclasse_redis_port: 6379
-laclasse_redis_root: org:example:test
+laclasse_redis_root: "vagrant:cdt"
