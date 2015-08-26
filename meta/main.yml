@@ -4,5 +4,5 @@ dependencies:
     ruby_default: "{{ laclasse_cahiertextes_ruby_version }}"
     ruby_deploy_user: "{{ laclasse_cahiertextes_deploy_user }}"
     when: '"{{ laclasse_cahiertextes_ruby_version }}" != "system"'
-  - role: ansible-nodejs # Assets precomiplation
+  - role: ansible-nodejs
 
