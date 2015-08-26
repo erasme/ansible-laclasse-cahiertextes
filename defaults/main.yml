@@ -77,7 +77,7 @@ laclasse_cahiertextes_deploy_user: 'user'
 laclasse_cahiertextes_path: '/'
 laclasse_cahiertextes_port: 42630
 laclasse_cahiertextes_repos: 'https://github.com/laclasse-com/service-cahiertextes.git'
-laclasse_cahiertextes_ruby_version: '2.2.2'
+laclasse_cahiertextes_ruby_version: "{{ laclasse_ruby_version | default('2.2.2')  }}"
 laclasse_cahiertextes_ssl_verify: true
 laclasse_cahiertextes_version: master
 laclasse_cahiertextes_packages:
