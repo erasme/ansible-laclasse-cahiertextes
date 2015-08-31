@@ -39,10 +39,11 @@ laclasse_sso_ssl: 'true'
 
 ## Pronote parameters
 laclasse_pronote_integrateur: LaclasseCom
-laclasse_pronote_key: |
-      -----BEGIN RSA PRIVATE KEY-----
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      -----END RSA PRIVATE KEY-----
+laclasse_pronote_key: false
+#laclasse_pronote_key: |
+#      -----BEGIN RSA PRIVATE KEY-----
+#      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#      -----END RSA PRIVATE KEY-----
 
 ## Services needed by CT
 laclasse_services:
@@ -71,7 +72,7 @@ laclasse_services:
 # CT parameters
 laclasse_cahiertextes_description: 'Cahier de textes'
 laclasse_cahiertextes_title: 'Cahier de textes'
-laclasse_cahiertextes_app_id: 'CTXT'    
+laclasse_cahiertextes_app_id: 'CTXT'
 laclasse_cahiertextes_api_mode: 'v3'
 laclasse_cahiertextes_deploy_user: 'user'
 laclasse_cahiertextes_path: '/'

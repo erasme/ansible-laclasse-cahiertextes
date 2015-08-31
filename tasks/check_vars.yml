@@ -3,5 +3,6 @@
   when: not {{ item }}
   with_items:
     - laclasse_cahiertextes_database
+    - laclasse_pronote_key
     - laclasse_redis_root
     - laclasse_redis_server
