@@ -165,6 +165,7 @@
 - name: Check if a migration is needed
   sudo_user: "{{ laclasse_cahiertextes_deploy_user }}"
   sudo: true
+  always_run: true
   shell: >
     cd ~{{ laclasse_cahiertextes_deploy_user }}/laclasse-cahiertextes/; bash -lc 'RACK_ENV={{ laclasse_environment }} bundle exec rake  db:check_migrate'
   register: db_migrate_required
