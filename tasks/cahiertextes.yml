@@ -137,11 +137,13 @@
 - name: Installs prereqs on db server
   apt: pkg=python-mysqldb state=latest
   delegate_to: "{{database_delegate_hostname}}"
+  when: not laclasse_skip_database
 
 - name: Creates database if required
   mysql_db: name={{ laclasse_cahiertextes_database.name }} state=present
   delegate_to: "{{ database_delegate_hostname }}"
   register: db_created
+  when: not laclasse_skip_database
   notify: Restart laclasse-cahiertextes
 
 - name: Creates database user
@@ -152,6 +154,7 @@
     host: "{{ database_client_hostname }}"
   delegate_to: "{{database_delegate_hostname}}"
   register: dbuser_created
+  when: not laclasse_skip_database
   notify: Restart laclasse-cahiertextes
 
 - name: Check if a migration is required
